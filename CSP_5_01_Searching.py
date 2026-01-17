@@ -32,15 +32,6 @@ def linearSearch(items:list, target) ->tuple[int,int]:
     else:
         return (i,i+1)
 
-b=linearSearch([1,2,3,4,5],4)
-print(b)
-
-b=linearSearch([1,3,4,5,6,7,8,9],1)
-print(b)
-b=linearSearch([1,3,4,5,6,7,8,9],9)
-print(b)
-b=linearSearch([1,3,4,5,6,7,8,10],9)
-print(b)
 def binarySearch(items:list, target) -> tuple[int,int]:
     # Modify the below function such that it implements linear search.
     # Return the index of the target value and the amount of checks it took
@@ -50,21 +41,37 @@ def binarySearch(items:list, target) -> tuple[int,int]:
     H=len(items)-1
     i=1
     F=0
-    while i<=len(items):
+    while L<=H:
+
         M=(L+H)//2
+        if H-L==1:
+            M=L
         if items[M] == target:
             F=1
             break
         if items[M] < target:
-            L=M
+            L=M+1
         if items[M] > target:
-            H=M
+            H=M-1
         i+=1
 
     if F == 1:
-        return (i,M)
+        return (M,i)
     else:
-        return (-1,i)
+        return (-1,i-1)
 
-b=binarySearch([1,2,3,4,5,6,7,8,9],12)
+
+
+
+b=binarySearch([1,3,5,7,9],5)
+print(b)
+b=binarySearch([1,3,5,7,9],7)
+print(b)
+b=binarySearch([1,3,5,7,9],9)
+print(b)
+b=binarySearch([1,3,5,7,9],1)
+print(b)
+b=binarySearch([1,3,5,7,9],3)
+print(b)
+b=binarySearch([1,3,5,7,9],10)
 print(b)
