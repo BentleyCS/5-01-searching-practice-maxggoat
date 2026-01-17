@@ -28,9 +28,9 @@ def linearSearch(items:list, target) ->tuple[int,int]:
         i+=1
 
     if i==len(items):
-        return [-1,i]
+        return (-1,i)
     else:
-        return [i,i+1]
+        return (i,i+1)
 
 b=linearSearch([1,2,3,4,5],4)
 print(b)
@@ -62,9 +62,9 @@ def binarySearch(items:list, target) -> tuple[int,int]:
         i+=1
 
     if F == 1:
-        return [i,M]
+        return (i,M)
     else:
-        return [-1,i]
+        return (-1,i)
 
 b=binarySearch([1,2,3,4,5,6,7,8,9],12)
 print(b)
