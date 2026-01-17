@@ -28,14 +28,19 @@ def linearSearch(items:list, target) ->tuple[int,int]:
         i+=1
 
     if i==len(items):
-        return [-1,i+1]
+        return [-1,i]
     else:
         return [i,i+1]
 
 b=linearSearch([1,2,3,4,5],4)
 print(b)
 
-
+b=linearSearch([1,3,4,5,6,7,8,9],1)
+print(b)
+b=linearSearch([1,3,4,5,6,7,8,9],9)
+print(b)
+b=linearSearch([1,3,4,5,6,7,8,10],9)
+print(b)
 def binarySearch(items:list, target) -> tuple[int,int]:
     # Modify the below function such that it implements linear search.
     # Return the index of the target value and the amount of checks it took
