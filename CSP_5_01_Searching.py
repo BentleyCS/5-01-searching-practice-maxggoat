@@ -5,6 +5,7 @@ def randomSearch(items:list, target) -> int:
     #print out the amount of tries it took and return the index of the target value
     import random
     i=1
+    random.seed(117)
     while True:
         x=random.randint(0, len(items)-1)
         if items[x]==target:
@@ -12,7 +13,7 @@ def randomSearch(items:list, target) -> int:
         i+=1
     return i
 
-b=randomSearch([1,2,3,4,5],2)
+b=randomSearch([1,3,5,9,7,12,11,10,2,4,6,8],5)
 print(b)
 
 
